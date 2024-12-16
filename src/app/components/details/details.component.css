@@ -1,0 +1,9 @@
+.todo-detail {
+  padding: 20px;
+}
+
+.todo-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}

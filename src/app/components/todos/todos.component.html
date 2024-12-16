@@ -1,0 +1,45 @@
+<div>
+  <h1 class="text-center text-primary">To Do List Application</h1>
+  <img width="100px" height="100px" class="rounded mx-auto d-block mb-3" [src]="image">
+  <form (ngSubmit)="creatnew()">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-10">
+        <input class="form-control mb-2"
+        placeholder="New task"
+        [(ngModel)]="newtodo.title"
+        [ngModelOptions]="{standalone: true}">      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-primary" (click)="creatnew()" >Add</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <table class="table table-light table-striped-columns table-hover">
+          <thead>
+            <tr *ngIf="istrue">
+              <th>Task title</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let todos of todolist; let i = index; trackBy: fn">
+              <td [ngClass]="{'completed': todos.completed}" [routerLink]="['/todos',todos.id]">
+                {{ todos.title }}
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary">Edit</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="delete(todos.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</form>
+</div>

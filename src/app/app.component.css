@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.d-flex {
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
